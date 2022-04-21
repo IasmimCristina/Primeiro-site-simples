@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF- Protagonista</title>
+    <link rel="stylesheet" href="css/folhadeestilo.css">
+    <link rel="shortcut icon" href="imagens/qiu.ico" type="image/x-icon">
+</head>
+<body class="color-page">
+    <div class="containerprincipal" id="topo">
+        <header>
+            <div class="logo">
+                <a href="index.html"></a>
+                <!--Dará um link para a home do nosso site.-->
+                <img src="imagens/logo.jpg" alt="Logomarca do site.">
+            </div> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobreojogo.html">Sobre o jogo</a></li>
+                    <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="#topo">Protagonista</a></li>
+                    <!--Usamos o "a" para direcionar o usuário para as páginas desejadas. A de âncora.-->
+                </ul>
+            </nav>   
+        </header>
+        <div class="img-titulo">
+            <img src="imagens/protagonistasvariacao.jpeg" alt="Protagonista">
+        </div>
+    </div>
+    <section id="txt-protag">
+        <h1>Opções disponíveis para customização</h1>
+        <p>
+            Há muitas opções de customização e através do formulário abaixo, você será capaz de saber algumas.
+        </p>
+        <form name="meu_mc" id="meu_mc"> <!--Comunicação com o servidor.-->
+            <p class="nome">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nomeid" placeholder="Ex: Franky" required="required"name="nome">
+
+            </p>
+            <p class="cordepele">
+                <label for="cordepele">Cor de pele:</label><br>
+                <input type="text" id="cordepeleid"placeholder="Ex: marrom escura"required="required"name="cordepele">
+            </p>
+            <p>
+                <label for="altura">Altura:</label><br>
+                <input type="text" id="alturaid" placeholder="Ex: muito alta ou muito baixa" required="required" name="altura">
+
+            </p>
+            <p>
+                Mão dominante, apelido, cor dos olhos e cabelo, além da personalidade:<br>
+                <textarea placeholder="Individualidades do protagonista" required="required"></textarea>
+            </p>
+            <button type="submit" form="mc">Finalizado</button>
+        </form>
+        <div id="dado-ficticio">
+            <h1>Interface de configuração</h1>
+            <h2><img src="imagens/teladecustomizacao.jpg" alt="Tela de customização"><br> Você decide a aparência do protagonista <br></h2>
+            <h2><img src="imagens/Our-Life-Customize-Character.png" alt=""><br> Sua altura e formato corporal <br></h2>
+            <h2><img src="imagens/customica.jpeg" alt="Mais customizáção."><br> Há uma interessante paleta de cores para customização do cabelo, pele, olhos e acessórios! <br></h2>
+            <h2><img src="imagens/mamom.png" alt="Mãe do protagonista."><br> A mãe do protagonista também é personalizável <br></h2>
+            
+
+
+        </div>
+    </section>    
+    
+</body>
+</html>
