@@ -1,0 +1,217 @@
+*{margin: 0;padding: 0;} /*O elementos terão a configuração mencionada resetada.*/
+
+.containerprincipal{
+                   
+    font-family: 'Source Code Pro', monospace;
+    color: brown;
+}
+
+/*Configuração do topo.*/
+header{
+    width: 100%; height: 152px; background-color:#6b3804 ;
+    position: relative; top:0;
+}
+/*Configurando a logo. Logo terá como coordenada inicial top left do container, nesse caso, o header.
+Como o header tem o tamanho da janela e está no topo da página, a div "logo" se posicionará no canto superior da tela.*/
+
+.logo{
+    position: absolute;
+    width: 300px;
+    /*300px e auto para se adequar à largura.*/
+    height: auto;
+}
+
+.logo img{
+    width: 90%; /*90% de 300px! E 10% também. */
+    margin-right: 50%; /*A letras do menu sumiram pois estão atrás da imagem, para mostrar, é só mover aqui!*/
+
+}
+
+/*Personalizando o seu menu!*/
+nav{ /* Uma tag  como Seletor"nav"  com a técnica de aninhamento para definir as propriedades dos itens da list*/
+    position: absolute;
+    right:1px;
+    bottom:35px;
+}
+
+nav ul li {
+    
+    float:left; /*Mede a flutuação de um elemento. Trabalha bem com position relative e é usado para o desenvolvimento tableless. Forçamos os nossos itens do li para esquerda, permanecendo na mesma linha. */
+    color: #CD853F;
+    width: auto;
+    margin: 0.5em; /*Separação de um elemento do outro.*/
+    font-size: 1.5em; /*em irá se adequar o tamanho da tela*/
+    font-family:'Source Code Pro', monospace;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f7c89a;
+}
+
+nav ul li a:hover { /* Atribuir uma cor quando o mouse passar.*/
+    color:#a55911;
+}
+
+/* CTRL + SHIFT + P = wrap with abreviation!!*/
+#banner{ width: 100%;}
+#banner img{width: 100%; margin-bottom: 0;}
+/*Usamos o "#" para nos referenciar ao "banner". */
+
+/* Definição das propriedades dos Pop-ups.*/
+.modalDialog{
+    position:fixed; /* (Rolagem)Posição fixa de acordo com as coordenadas top, right e etc.*/
+    font-family:'Source Code Pro', monospace;
+    top: 0; /* 0 significa que a altura e largura são 100%. Com position fixed, ele ocupará a tela inteira. Absolute/Relative: relacionado ao pai do elemento.*/
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #572d03;
+    z-index: 99999; /* As divs estão por cima de todo o conteúdo.*/
+    opacity: 0; /* Usaremos transition para realizar a mudança de valor da propriedade opacity.*/
+    transition: 400ms ease-in;
+    -webkit-transition:opacity 400ms ease-in;
+    -moz-transition:opacity 400ms ease-in; /* Ex: ease-out, ease-in-out, Linear, etc.*/
+    pointer-events:none; /* Pointer-events: sendo "none", a classe modalDialog não será alvo de clique e hovers. Usamos o none para que possamos interagir com o que está abaixo.*/
+    display: none; /* Não existe: none. "block": OS ELEMENTOS DEVEM SER RENDERIZADOS COM SEUS FILHOS CONTIDOS NELE.*/
+
+    /*
+        Sobre as Âncoras:
+        Dito de outro modo, podemos utilizar um ID como valor do href de uma tag <a>. Desse modo, criamos uma ligação ou âncora da tag <a> com o elemento que possui o ID informado.
+
+        Target é uma pseudo-classe. Tal palavra indica o estado especial de um elemento ativo. Neste caso, quando clicamos no link (tag <a>) é ativada a ligação (âncora), e a tela é direcionada até o local em que elemento que possui o mesmo ID do atributo href da tag <a> está. 
+    
+    */
+
+}
+
+.modalDialog:target{
+    display: block;
+    opacity: 1; /*A opacidade mudará para 1 
+    (opacity : 1) quando clicarmos no link ou na âncora. Isso vai ocorrer porque o clique ativará o transition colocado anteriormente na class modalDialog. Desse modo, o pop-up vai aparecer suavemente*/
+    pointer-events: auto; /*A propriedade pointer-events foi modificada para auto, possibilitando a interação com as divs.*/
+}
+
+.modalDialog div {
+    width: 500px;
+    position: relative;
+    margin: 10% auto; /*10% de margin-top.*/
+    padding: 5px 20px 13px 20px; /*Referente á: top, right, bottom e left. */
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 10px; /*Extremidades arredodadas. Para todos.*/
+    background-color: #f7c89a;
+}
+
+.modalDialog p{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-decoration-color: #572d03;
+    color: #572d03;
+}
+
+.modalDialog h1{
+    
+    text-decoration-color: #572d03;
+    color: #572d03;
+    text-align: center;
+}
+
+.modalDialog img {
+    width: 50%;
+    position: relative;
+    margin-left: 25%;
+}
+
+/*
+    Configuração do close. Ao ser selecionado, voltará 
+    para o target quando o display È none.
+*/
+.close {
+    background-color: #f8cba2;
+    color: #572d03;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+.close.hover {
+    background-color: #572d03;
+} 
+
+/*
+    Nem todos os navegadores são compatíveis com os elementos do HTML 5. As propriedades transition e border-radius podem apresentar um comportamento não satisfatório em navegadores mais antigos.
+
+    Nessa aplicação, é ideal que os navegadores tenham suporte para essas propriedades. Podemos verificar a compatibilidade com o navegador no site www.caniuse.com/#feat    
+*/
+/*
+    width: 100% (tamanho do container, a div container tem o tamanho da janela, o footer terá a largura da janela)
+    footer.foooter
+      ^
+      |
+    Observe que atribuímos o valor de 30% para a largura de cada div e uma margin de 1%. Dessa forma, cada div ocupará o espaço de 32%. Não entendeu? Observe a ilustração a seguir: 
+
+*/
+
+footer{width: 100%; height: 18%;background-color:#CD853F; color: #572d03; position: relative; float: left;font-family: 'Source Code Pro', monospace;}
+footer.footer-text{width: 30%;margin:1%; position: relative; float: left;} 
+footer.footer-text a{color: #ffffff;}
+
+/*Cor de fundo  das outras páginas.*/
+.color-page {background-color: #f8cba2;}
+
+/*OUTRAS PÁGINAS IMAGEM TITULO -Configuração.*/
+.img-titulo {width: 100%; height: auto; margin-bottom: 25px; position:relative;  margin-right: 0%;}
+.img-titulo img{width: 100% /* 90% da largura do pai(div).*/; margin-left: 0%;margin-top: 0px;}
+
+/* Solid significa que não é tracejada.*/
+#personagenssec{ width: 95%;position: absolute;  }
+.configp{ width: 100%;border: 18px solid #572d03;margin-left:0%;padding:1%; float: initial;margin-top: 0px;background-color: #CD853F;}
+.configp img{
+    width: 60%;margin-left: 20%;margin-bottom: 20px;
+}
+.configp p{
+    width: 90%;margin-left: 5%;font-size: 1.4em;margin-bottom: 20px;text-align: center; color: #572d03;
+} /*Em provavelmente sofre com o Zoom. 1 em = 16px ou 12=~pt.1.2=19px14pt*/
+.configp p a{
+    color: #f8cba2;
+/*Chegou a hora de aplicarmos os estilos ao conteúdo da página clientes.
+
+Com exceção das propriedades border e font-size, as demais propriedades já foram detalhadas anteriormente. Dessa forma, direcionaremos nossa atenção para as propriedades border e font-size. */
+}
+
+#container-sobre {width: 75%;;position: static;height: 50%;background-color: #572d03; margin: auto; align-content: center;}
+#txt-sobre{width: 100%;float:unset;position: relative;padding: 0% ;color:#f8cba2; font-size: large; margin: auto;}
+#txt-sobre h1{width: 80%;position: relative; margin: auto; text-align: center;}
+#txt-sobre p{width: 80%;position: relative; margin: auto; text-align: center;} 
+#txt-sobre dl{text-align:justify;width: 80%;  margin:auto;text-align: center; }
+#img-sobre{width: 100%;position: relative;;margin: auto;}
+#img-sobre img{width: 85%;margin: auto; }
+
+/*Estilização do formulário*/
+#txt-protag {width: 100%; height: 100%; position: absolute;}
+#txt-protag form {width: 80%; ; margin:auto;background-color: antiquewhite; padding: 2%; top: 15%; min-height: 400px;}
+#txt-protag form label{ font-weight: bold;}
+#txt-protag form input {
+    max-width: 100%; width: 99%; height: 30px; margin-top: 10px;margin-bottom: 15px; border: solid #6b3804 5px; padding-left: 0%;
+}
+#txt-protag h1 {text-align: center; color: #572d03;}
+#txt-protag p {color: #572d03; text-align: center;}
+#text-protag form textarea {max-width: 100%; width: 99%;border: solid #572d03 5px; padding-left: 1%; min-height: 100px;}
+/*Textarea não pode ultrapassar os limites, então min height e max height ajudam.*/
+#text-protag form button {
+    width: 30%;height: auto;cursor: pointer;background-color: aliceblue; color: #572d03; font-size: 1.9em;padding: 15px 0 15px 0;margin-left: 50%; margin-top: 1%;
+}
+#txt-protag #dado-ficticio {width: 100%;position: relative; background-color: #572d03; color: #f7c89a; top: 5%;align-items: center; text-align: center;}
+#txt-protag #dado-ficticio h1 {color: #f7c89a; text-align: center; font-size: 50px; }
+#txt-protag #dado-ficticio h2 {margin-top: 10%; margin-bottom: 10%; text-align: center;}
+#txt-protag #dado-ficticio h2 img {width: 80%;}
+

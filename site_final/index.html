@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Como a folha de estilo está em outra pasta, a "/" foi adicionada abaixo.
+    Também teremos um ico!-->
+
+    <link rel="stylesheet" href="css/folhadeestilo.css">
+    <link rel="shortcut icon" href="imagens/qiu.ico" type="image/x-icon">
+    <title>Interactive fiction!</title>
+</head>
+<body class="color-page">
+    <div class="containerprincipal">
+        <header>
+            <div class="logo">
+                <a href="index.html"></a>
+                <!--Dará um link para a home do nosso site.-->
+                <img src="imagens/logo.jpg" alt="Logomarca do site.">
+            </div> 
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobreojogo.html">Sobre o jogo</a></li>
+                    <li><a href="personagens.html">Personagens</a></li>
+                    <li><a href="protagonista.html">Protagonista</a></li>
+                    <!--Usamos o "a" para direcionar o usuário para as páginas desejadas. A de âncora.-->
+                </ul>
+            </nav>   
+        </header>
+    </div>
+        <section id="banner">
+            <img src="imagens/babiesceu.webp" alt="banner-topo">
+        </section>
+
+        <!-- Janela Modal: filha da  tela principal.-->
+        <!-- Pop-ups:  uma janela no navegador através de uma página web ou link de redirecionamento. Normalmente para anúncios.-->
+        <div id="openmodal" class="modalDialog">
+            <div>
+                <a href="#close" class="close">X</a>
+                <h1> A série de jogos Our Life</h1>
+                <img src="imagens/ourlife1.jpg" alt="">
+                <p><strong>Our Life</strong>: Beginnings and Always foi o primeiro jogo da série que designou o padrão para o jogo posterior. Em ambos, o personagem principal- altamente customizável- cresce ao lado de vizinhos importantes que poderão mudar a sua vida enquanto passa pela infância, adolescência e idade adulta. O jogo é nostalgico e sentimental, buscando ensinar lições importantes que todos aprendem ao se desenvolverem e passarem por dificuldades.</p>
+            </div>
+        </div>
+        <div id="openmodal1" class="modalDialog">
+            <div>
+                <a href="#close" class="close">X</a>
+                <h1>Os criadores</h1>
+                <img src="imagens/gb-patch-logo2.png" alt="GB-Patch Logomarca">
+                <p><strong>Gb-Patch</strong> é a empresa que criou a série de jogos Our Life e atualmente busca criar Visual Novels com um personagem principal altamente customizável.</p>
+            </div>
+        </div>
+        <div id="openmodal2" class="modalDialog">
+            <div>
+                <a href="#close" class="close">X</a>
+                <h1>Preço</h1>
+                <img src="imagens/coveoul1.jpg" alt="ourlife1">
+                <p>A série de jogos Our Life é <strong>gratuita com DLCs adicionais que são pagas</strong>. Elas podem ser pagas com dinehiro através da Steam ou Itch, acesse através do link: https://gbpatch.itch.io/our-life-nf. Cada conjunto/pacote de DLC possui o mesmo custo, sem descontos aplicados.</p>
+            </div>
+        </div>
+        <!-- Observe que as três possuem IDs diferentes porém com classes iguais.-->
+
+        <!-- Rodapé: container onde estarão as âncoras.Resumo interessante também.
+        Uma div por pop-up.-->
+        <!--Class para o estilo comum para os pop-ups. -->
+        <footer>
+            <div class="footer-text">
+                <h3> A série de jogos Our Life</h3>
+                <p>Saiba quais são as principais características dessa série de jogos. - <a href="#openmodal">clique aqui</a>.</p>
+            </div>
+            <div class="footer-text">
+                <h3>Os criadores</h3>
+                <p>Saiba quem está por trás dessa Visual Novel. -<a href="#openmodal1">clique aqui</a>.</p>
+            </div>
+            <div class="footer-text">
+                <h3>Preço</h3>
+                <p>Saiba qual o preço para adquirir as DLCS. -<a href="#openmodal2">clique aqui</a>.</p>
+            </div>
+
+        </footer>
+    
+</body>
+</html>
